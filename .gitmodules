@@ -1,3 +1,6 @@
 [submodule "api-catalogo"]
 	path = api-catalogo
 	url = git@github.com:MatheusFelipeMarinho/api-catalogo.git
+[submodule "api-payments"]
+	path = api-payments
+	url = git@github.com:MatheusFelipeMarinho/api-payments.git
