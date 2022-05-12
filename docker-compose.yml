@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  front:
+    image: node:latest
+
+  rabbitmq:
+    image: rabbitmq
+    ports:
+      - 5672:5672
+
+  mongo-mkt:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo-usuario
+      MONGO_INITDB_ROOT_PASSWORD: mongo-senha
+      MONGO_INITDB_DATABASE: mongo-db
