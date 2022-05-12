@@ -4,3 +4,6 @@
 [submodule "api-payments"]
 	path = api-payments
 	url = git@github.com:MatheusFelipeMarinho/api-payments.git
+[submodule "nuxt-start"]
+	path = nuxt-start
+	url = git@github.com:MatheusFelipeMarinho/nuxt-start.git
