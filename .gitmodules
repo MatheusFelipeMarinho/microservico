@@ -1,0 +1,3 @@
+[submodule "api-catalogo"]
+	path = api-catalogo
+	url = git@github.com:MatheusFelipeMarinho/api-catalogo.git
