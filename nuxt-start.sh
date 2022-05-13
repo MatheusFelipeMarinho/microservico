@@ -4,4 +4,4 @@ if [ ! -d node_modules ]; then
   npm install
 fi
 
-npm start -- --host=0.0.0.0 --port 3000
+npm run dev -- --host=0.0.0.0 --port 3000

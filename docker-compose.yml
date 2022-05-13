@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   front:
-    image: node:latest
+    image: node:16
     volumes:
       - ./nuxt-start:/app
       - type: bind
@@ -65,7 +65,7 @@ services:
   api-gateway:
     image: nginx
     volumes:
-      - ./servicos-nginx:/etc/nginx/conf.d
+      - ./api-gateway:/etc/nginx/conf.d
     restart: always
     ports:
       - 80:80
