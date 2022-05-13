@@ -3,9 +3,9 @@ services:
   front:
     image: node:latest
     volumes:
-      - ./front-end:/app
+      - ./nuxt-start:/app
       - type: bind
-        source: ./front-end.sh
+        source: ./nuxt-start.sh
         target: /app/entrypoint.sh
     working_dir: /app
     command: sh ./entrypoint.sh
@@ -36,14 +36,14 @@ services:
     working_dir: /app
     command: sh ./entrypoint.sh
     environment: 
-      SERVER_PORT: 3000
+      SERVER_PORT: 3002
       MONGO_URL: "mongodb://mongo-usuario:mongo-senha@mongo-mkt:27017/mkt?authSource=admin"
       RABBITMQ_HOST: 'rabbitmq'
       RABBITMQ_PORT: 5672
       RABBITMQ_USERNAME: guest
       RABBITMQ_PASSWORD: guest
     ports:
-      - 3000:3000
+      - 3002:3002
     depends_on:
       - rabbitmq
       - mongo-database
@@ -72,4 +72,4 @@ services:
     depends_on:
       - api-catalogo
       - api-payments
-      - nuxt-start
+      - front
