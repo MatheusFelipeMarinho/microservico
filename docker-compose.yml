@@ -50,17 +50,28 @@ services:
 
   api-catalogo:
     build: ./api-catalogo
-    command: sh ./entrypoint.sh
-    ports:
-      - 9501:9501
+    environment:
+      JWT_KEY: chave-jwt
+      DB_CONNECTION: pgsql
+      DB_HOST: postgre-catalogo
+      DB_DATABASE: catalogo
+      DB_USERNAME: usuario_catalogo
+      DB_PASSWORD: senhapg
+      APP_KEY: c08cbbfd6eefc83ac6d23c4c791277e4
+      APP_URL: http://api-catalogo:8080
+      APP_ENV: local
+      APP_DEBUG: "true"
     volumes:
-      - ./api-catalogo:/app
+      - ./api-catalogo/:/app
       - type: bind
         source: ./api-catalogo.sh
         target: /app/entrypoint.sh
     working_dir: /app
+    command: sh ./entrypoint.sh
+    ports:
+      - 8080:8080
     depends_on:
-      - rabbitmq
+      - postgre-catalogo
 
   api-gateway:
     image: nginx
