@@ -70,6 +70,6 @@ services:
     ports:
       - 80:80
     depends_on:
-      - api-catalogo
+      # - api-catalogo
       - api-payments
       - front
