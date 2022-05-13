@@ -7,3 +7,6 @@
 [submodule "nuxt-start"]
 	path = nuxt-start
 	url = git@github.com:MatheusFelipeMarinho/nuxt-start.git
+[submodule "go-video-encoder"]
+	path = go-video-encoder
+	url = git@github.com:MatheusFelipeMarinho/go-video-encoder.git
